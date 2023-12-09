@@ -1,0 +1,71 @@
+.price-list {
+  display: grid;
+  gap: 10px;
+  padding-right: 20px;
+  align-items: center;
+}
+
+.price-list__section-title {
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 19px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.price-list__section-add-title {
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 19px;
+  padding-bottom: 5px;
+  padding-top: 60px;
+  text-align: left;
+}
+
+
+.price-list li {
+  display: grid;
+  width: 100%;
+  gap: 10px;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  min-height: 2em;
+  padding-right: 20px;
+  font-size: clamp(0.75rem, 0.6554rem + 0.4036vw, 1rem);
+  /*border: 1px solid yellow;*/
+}
+
+.price-list__section-title:not(:first-of-type) {
+  padding-top: 50px;
+}
+
+.price-list-half li {
+  grid-template-columns: 60% 40%;
+}
+
+.price-list-1col li {
+  grid-template-columns: 1fr;
+}
+
+
+.price-list li p {
+  padding-left: 5px;
+}
+
+.price-list li:nth-of-type(2n+1) {
+  background-color: #e9e9e9;
+}
+
+.price-list li:nth-child(1) {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+}
+
+/*.price-list p:nth-of-type(4n+3), .price-list p:nth-of-type(4n+4) {
+  background-color: lightgray;
+}*/
+
+@media (max-width: 750px) {
+}

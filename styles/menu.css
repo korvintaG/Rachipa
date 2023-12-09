@@ -1,0 +1,169 @@
+/* все что связано с меню */
+
+/* Меню */
+
+.header__menu {
+  display: flex;
+  text-transform: uppercase;
+  overflow: hidden;
+  /*gap: 53px;*/
+  /*border: 1px solid red;*/
+  color: var(--color-menu);
+  font-size: 13px;
+  flex-wrap: nowrap;
+  line-height: normal;  
+  justify-content:space-between;  
+  max-inline-size: 584px;
+  width: 100%;
+  padding: 0 31px;
+}
+
+:root .site__header {
+  --color-menu: gray;
+}
+
+.header__menu-item {
+  text-decoration: none;
+}
+
+.header__menu-item:hover {
+  text-decoration: underline;
+}
+
+.header__menu-button-container {
+  display: none;
+  height: 100%;
+  width: 140px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  /*border: 1px red solid;*/
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* рисуем сам бургер - 3 линии */
+.header__menu-button {
+  display: flex;
+  background-color: var(--burger-color);
+  position: relative;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.header__menu-button::before,
+.header__menu-button::after {
+  display: block;
+  background-color: var(--burger-color);
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.header__menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.header__menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .header__menu-button-container .header__menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .header__menu-button-container .header__menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+:root:has(#menu-toggle:checked) .home__layout-right-photo, :root:has(#menu-toggle:checked) .home__main-intro,
+:root:has(#menu-toggle:checked) .site__layout-left
+  {
+  filter: blur(4px) brightness(0.9);
+  /*transition: filter 200ms ;*/
+}
+
+#menu-toggle:checked + .header__menu-button-container .header__menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+ 
+@media (max-width: 750px) {
+
+  /* универсальные меню-лого */
+
+  .header__menu {
+    max-inline-size: 100%;
+  }
+
+  .header__menu-item {
+    font-size: 18px;
+  }
+
+  .header__menu-button-container {
+    display: flex;
+    width: 40px;
+    height: 30px;
+    align-items:flex-end;
+  }
+
+  .header__menu {
+    position: absolute;
+    top: 0;
+    margin-top: var(--header-height);
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    padding:0;
+    z-index: 1;
+  }
+  #menu-toggle ~ .header__menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .header__menu li {
+    border: 1px solid #333;
+    height: 4.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .header__menu > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .header__menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+}
+
+@media ((orientation: landscape) and (min-width: 500px) and (max-width: 767px)) {
+
+  :root {
+    --burger-color: white;
+  }
+
+   #menu-toggle:checked ~ .header__menu li {
+    height: 3em;
+  }
+}

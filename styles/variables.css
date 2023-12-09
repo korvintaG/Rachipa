@@ -1,0 +1,10 @@
+:root {
+  --accent-color: #3A2AF3;
+  --color-menu: #F4E3E3;
+  --logo-color: black;
+  --burger-color: #fff;
+  --header-height: 70px;
+  --font-family: 'Montserrat';
+  --padding-left-site-content: clamp(0.9375rem, -0.2992rem + 2.5467vw, 1.875rem); /* 15 -> 30; */
+
+}

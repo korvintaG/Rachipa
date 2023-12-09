@@ -1,0 +1,213 @@
+/* специфические вещи для главной страницы */
+
+/* Лэйаут  главной страницы */
+
+.home__layout {
+  position: absolute;
+  inset: 0 0;
+  display: grid;
+  grid-template-columns: calc(calc(212 / 1024) * 100vw) 1fr;
+  height: 100vh;
+  z-index: -1;
+}
+
+.home__layout-left {
+  background-color: blue;
+}
+
+.home__layout-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: -1;
+}
+
+.home__layout-right-menu {
+  height: var(--header-height);
+  background-color: #1E1D1D;
+}
+
+.home__layout-right-photo {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/Rachipa.png);
+  background-position: 0 10px;
+  background-size: cover;
+  background-color: #1E1D1D;
+  background-repeat: no-repeat;
+}
+
+.home__layout-right-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-color: #000;
+  z-index: 1;
+}
+
+
+/* header домашней страницы */
+
+:root {
+  --logo-color: var(--accent-color);
+}
+
+.home__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  /* border: 1px red solid;*/
+  height: calc(100vh - var(--header-height));
+  gap: 30vw;
+}
+
+/* текст */
+
+.home__main-intro {
+  align-self: center;
+  padding-left: calc(calc(53 / 1024) * 100vw);
+  padding-bottom: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* border: 1px green solid;*/ 
+  max-width: calc(calc(400 / 1024) * 100vw);
+}
+
+
+.home__main-hello {
+  color: #FFF;
+  font-size: clamp(2rem, 1.8555rem + 0.6163vw, 2.25rem); /* 32-36px */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4; /* 50.4px */
+}
+
+.home__main-professor {
+  color: #FFF;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration-line: underline;  
+}
+
+.home__main-email {
+  color: #C4BCFF;
+  font-size: clamp(0.8125rem, 0.4554rem + 0.558vw, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;  
+}
+
+.home__main-about {
+  /* border: 1px yellow solid; */
+  align-self: end;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: calc(calc(10 / 1024) * 100vw);
+  max-width: calc(calc(298 / 1024) * 100vw);
+}
+
+.home__main-subheader {
+  color: #FFF;
+  font-size: clamp(1.25rem, 0.674rem + 0.9804vw, 1.875rem); /* 20-40*/
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.home__main-about-text {
+  color: #FFF;
+  font-size: clamp(0.75rem, 0.4044rem + 0.5882vw, 1.125rem); /* 12-18 */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;  
+}
+
+.home__main-sign {
+  padding-bottom: 20px;
+  margin: 0 0 0 auto;
+  width: 100px;
+  filter: invert(1);
+  
+}
+
+@media (max-width: 940px) {
+  .home__main-email {
+    display: none;
+  }
+
+  .home__main-about {
+    display: none;
+  }
+
+  .home__main-intro {
+    padding-right: clamp(0.625rem, -0.8195rem + 6.1633vw, 3.125rem);
+  }
+
+  .home__main-hello {
+    font-size: clamp(2rem, 1.8555rem + 0.6163vw, 2.25rem);
+  }
+}
+
+@media (max-width: 750px) {
+
+  :root {
+    --logo-color: black;
+  }
+
+  .home__layout {
+    grid-template-columns: 0 1fr;
+  }
+
+  .home__layout-right-photo {
+    background-position: calc(-65vw - 1px) 50px;
+    background-size: 150vw;
+  }
+
+  .home__main {
+    display: flex;
+    justify-content: end;
+    gap: 0;
+    /*width: 100%;*/
+    /*border: 1px yellow solid;*/
+  }
+
+  .home__main-intro {
+    align-self:flex-start;
+    padding-top: var(--header-height) ;
+    padding-left: 0;
+    text-align: right;
+    /*padding-right: 10px;*/
+    /*border: 1px red solid;*/
+    max-width: min(80vw, 319px);
+  }
+}
+
+@media (450px < width <= 750px) {
+  .home__layout-right-photo {
+     background-position: calc(-53vw - 1px) 50px;
+     background-size: 120vw;
+   }
+}
+ 
+@media ((orientation: landscape) and (min-width: 500px) and (max-width: 750px)) {
+  .home__layout-right-photo {
+    background-position: calc(-11vw - 1px) 10px;
+    background-size: 75vw;
+  }
+
+
+  .home__main-intro {
+    padding: 10px 50px 0;
+    font-size: 12px;
+    max-width: 65vw;
+  }
+
+  .home__main-hello {
+    font-size: 27px;
+  }  
+}
