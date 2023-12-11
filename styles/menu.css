@@ -11,8 +11,8 @@
   color: var(--color-menu);
   font-size: 13px;
   flex-wrap: nowrap;
-  line-height: normal;  
-  justify-content:space-between;  
+  line-height: normal;
+  justify-content: space-between;
   max-inline-size: 584px;
   width: 100%;
   padding: 0 31px;
@@ -69,16 +69,18 @@
 }
 
 .header__menu-button::before {
-  content: '';
+  content: "";
   margin-top: -8px;
 }
 
 .header__menu-button::after {
-  content: '';
+  content: "";
   margin-top: 8px;
 }
 
-#menu-toggle:checked + .header__menu-button-container .header__menu-button::before {
+#menu-toggle:checked
+  + .header__menu-button-container
+  .header__menu-button::before {
   margin-top: 0px;
   transform: rotate(405deg);
 }
@@ -87,20 +89,21 @@
   background: rgba(255, 255, 255, 0);
 }
 
-:root:has(#menu-toggle:checked) .home__layout-right-photo, :root:has(#menu-toggle:checked) .home__main-intro,
-:root:has(#menu-toggle:checked) .site__layout-left
-  {
+:root:has(#menu-toggle:checked) .home__layout-right-photo,
+:root:has(#menu-toggle:checked) .home__main-intro,
+:root:has(#menu-toggle:checked) .site__layout-left {
   filter: blur(4px) brightness(0.9);
   /*transition: filter 200ms ;*/
 }
 
-#menu-toggle:checked + .header__menu-button-container .header__menu-button::after {
+#menu-toggle:checked
+  + .header__menu-button-container
+  .header__menu-button::after {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
- 
-@media (max-width: 750px) {
 
+@media (max-width: 750px) {
   /* универсальные меню-лого */
 
   .header__menu {
@@ -115,7 +118,7 @@
     display: flex;
     width: 40px;
     height: 30px;
-    align-items:flex-end;
+    align-items: flex-end;
   }
 
   .header__menu {
@@ -125,7 +128,7 @@
     left: 0;
     flex-direction: column;
     width: 100%;
-    padding:0;
+    padding: 0;
     z-index: 1;
   }
   #menu-toggle ~ .header__menu li {
@@ -154,16 +157,14 @@
   .header__menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-
 }
 
 @media ((orientation: landscape) and (min-width: 500px) and (max-width: 767px)) {
-
   :root {
     --burger-color: white;
   }
 
-   #menu-toggle:checked ~ .header__menu li {
+  #menu-toggle:checked ~ .header__menu li {
     height: 3em;
   }
 }

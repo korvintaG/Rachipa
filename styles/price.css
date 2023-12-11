@@ -23,7 +23,6 @@
   text-align: left;
 }
 
-
 .price-list li {
   display: grid;
   width: 100%;
@@ -48,12 +47,11 @@
   grid-template-columns: 1fr;
 }
 
-
 .price-list li p {
   padding-left: 5px;
 }
 
-.price-list li:nth-of-type(2n+1) {
+.price-list li:nth-of-type(2n + 1) {
   background-color: #e9e9e9;
 }
 

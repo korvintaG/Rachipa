@@ -24,7 +24,7 @@
 
 .home__layout-right-menu {
   height: var(--header-height);
-  background-color: #1E1D1D;
+  background-color: #1e1d1d;
 }
 
 .home__layout-right-photo {
@@ -33,19 +33,18 @@
   background-image: url(../img/Rachipa.png);
   background-position: 0 10px;
   background-size: cover;
-  background-color: #1E1D1D;
+  background-color: #1e1d1d;
   background-repeat: no-repeat;
 }
 
 .home__layout-right-photo::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   opacity: 0.2;
   background-color: #000;
   z-index: 1;
 }
-
 
 /* header домашней страницы */
 
@@ -55,7 +54,7 @@
 
 .home__main {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   /* border: 1px red solid;*/
   height: calc(100vh - var(--header-height));
   gap: 30vw;
@@ -70,13 +69,12 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  /* border: 1px green solid;*/ 
+  /* border: 1px green solid;*/
   max-width: calc(calc(400 / 1024) * 100vw);
 }
 
-
 .home__main-hello {
-  color: #FFF;
+  color: #fff;
   font-size: clamp(2rem, 1.8555rem + 0.6163vw, 2.25rem); /* 32-36px */
   font-style: normal;
   font-weight: 600;
@@ -84,19 +82,19 @@
 }
 
 .home__main-professor {
-  color: #FFF;
+  color: #fff;
   font-style: normal;
   font-weight: 500;
   line-height: 1.4;
-  text-decoration-line: underline;  
+  text-decoration-line: underline;
 }
 
 .home__main-email {
-  color: #C4BCFF;
+  color: #c4bcff;
   font-size: clamp(0.8125rem, 0.4554rem + 0.558vw, 1.125rem);
   font-style: normal;
   font-weight: 400;
-  line-height: normal;  
+  line-height: normal;
 }
 
 .home__main-about {
@@ -111,7 +109,7 @@
 }
 
 .home__main-subheader {
-  color: #FFF;
+  color: #fff;
   font-size: clamp(1.25rem, 0.674rem + 0.9804vw, 1.875rem); /* 20-40*/
   font-style: normal;
   font-weight: 700;
@@ -120,11 +118,11 @@
 }
 
 .home__main-about-text {
-  color: #FFF;
+  color: #fff;
   font-size: clamp(0.75rem, 0.4044rem + 0.5882vw, 1.125rem); /* 12-18 */
   font-style: normal;
   font-weight: 400;
-  line-height: normal;  
+  line-height: normal;
 }
 
 .home__main-sign {
@@ -132,7 +130,6 @@
   margin: 0 0 0 auto;
   width: 100px;
   filter: invert(1);
-  
 }
 
 @media (max-width: 940px) {
@@ -154,7 +151,6 @@
 }
 
 @media (max-width: 750px) {
-
   :root {
     --logo-color: black;
   }
@@ -177,8 +173,8 @@
   }
 
   .home__main-intro {
-    align-self:flex-start;
-    padding-top: var(--header-height) ;
+    align-self: flex-start;
+    padding-top: var(--header-height);
     padding-left: 0;
     text-align: right;
     /*padding-right: 10px;*/
@@ -189,17 +185,16 @@
 
 @media (450px < width <= 750px) {
   .home__layout-right-photo {
-     background-position: calc(-53vw - 1px) 50px;
-     background-size: 120vw;
-   }
+    background-position: calc(-53vw - 1px) 50px;
+    background-size: 120vw;
+  }
 }
- 
+
 @media ((orientation: landscape) and (min-width: 500px) and (max-width: 750px)) {
   .home__layout-right-photo {
     background-position: calc(-11vw - 1px) 10px;
     background-size: 75vw;
   }
-
 
   .home__main-intro {
     padding: 10px 50px 0;
@@ -209,5 +204,5 @@
 
   .home__main-hello {
     font-size: 27px;
-  }  
+  }
 }

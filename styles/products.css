@@ -5,3 +5,13 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.advantages {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.advantages ul li {
+  margin-left: 20px;
+  list-style:disc ;
+}
